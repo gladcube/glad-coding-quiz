@@ -1,4 +1,4 @@
-{check_required_envs} = require \../services/envs-checker.ls
+{check_required_envs} = require \envs-checker
 quiz_no = process.env.QUIZ_NO
 
 module.exports = answer = ->

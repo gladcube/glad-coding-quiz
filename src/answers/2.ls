@@ -4,7 +4,7 @@
 class Div
   -> @num = it
   append-child: ->
-    console.log "#{it.num} into #{@num}"
+    console.log "span##{it.num} into div\##{@num}"
 class Span
   -> @num = it
 dom =
@@ -26,6 +26,13 @@ module.exports = ->
   <[div span]>
   |> map document.query-selector-all
   |> zip-with $, [reverse, id]
+  |> apply zip
+  |> each apply let$ _, \appendChild, _
+
+  # Another
+  <[div span]>
+  |> map document.query-selector-all
+  |> zip-with $, [tail, reverse]
   |> apply zip
   |> each apply let$ _, \appendChild, _
 

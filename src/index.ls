@@ -1,4 +1,4 @@
-{check_required_envs} = require \./services/envs-checker.ls
+{check_required_envs} = require \envs-checker
 task_name = process.env.TASK_NAME
 
 do main = ->
